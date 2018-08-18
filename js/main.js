@@ -307,7 +307,7 @@ var mainF = {
 		}
 	}
 	if(this.bool == 1){
-		if(this.enemyHP <= 20){
+		if(this.enemyHP <= 25){
 			this.bool = 0;
 			this.enemyHP = this.enemyHP + 50;
 			this.labelScore.text = this.enemyHP;
@@ -322,7 +322,7 @@ var mainF = {
 		else {
 			this.labelScore.text = this.enemyHP;
 		}
-		this.playerHP = this.playerHP - (Math.floor(Math.random(4)+6));
+		this.playerHP = this.playerHP - (Math.floor(Math.random(5)+6));
 		this.labelScore1.text = this.playerHP;
 	}
 	if(this.input.down.isDown && this.keyPressed == 0){
