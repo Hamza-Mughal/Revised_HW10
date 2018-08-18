@@ -103,7 +103,7 @@ var mainJapan = {
 		game.load.image('background' , 'assets/tokyo.jpg');
 		game.load.image('player' , 'assets/player.png');
 		game.load.image('enemy' , 'assets/samurai.png');
-		game.load.audio('music', 'assets/city.mp3');
+		game.load.audio('music', 'assets/asianmusic.mp3');
     },
 
     create: function() {
@@ -377,7 +377,7 @@ var mainG = {
 var mainH = {
     preload: function() {
 	game.load.image('background' , 'assets/battle3.PNG');
-	game.load.audio('winmusic', 'assets/battlemusic.mp3');
+	game.load.audio('winmusic', 'assets/finalbattlemusic.mp3');
     },
 
     create: function() {
