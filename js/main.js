@@ -307,9 +307,9 @@ var mainF = {
 		}
 	}
 	if(this.bool == 1){
-		if(this.enemyHP <= 10){
+		if(this.enemyHP <= 15){
 			this.bool = 0;
-			this.enemyHP = this.enemyHP + 65;
+			this.enemyHP = this.enemyHP + 55;
 			this.labelScore.text = this.enemyHP;
 		}
 	}
@@ -327,7 +327,7 @@ var mainF = {
 	}
 	if(this.input.down.isDown && this.keyPressed == 0){
 		this.keyPressed = 1;
-		this.enemyHP = this.enemyHP - ((Math.floor(Math.random(4)+3))+this.defense);
+		this.enemyHP = this.enemyHP - ((Math.floor(Math.random(5)+3))+this.defense);
 		var x1 = this.enemyHP;
 		if(this.enemyHP < 0){
 			this.labelScore.text = 0;
