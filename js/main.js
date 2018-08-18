@@ -202,7 +202,7 @@ var mainD = {
 		this.labelScore1.text = this.playerHP;
 	}
 	if(this.input.down.isDown && this.keyPressed == 0){
-				this.keyPressed = 1;
+		this.keyPressed = 1;
 		this.enemyHP = this.enemyHP - (3+this.defense);
 		var x1 = this.enemyHP;
 		this.labelScore.text = this.enemyHP;
@@ -215,7 +215,7 @@ var mainD = {
 		game.state.start('bmain');
 	}
 	if(this.input.left.isDown && this.keyPressed == 0){
-				this.keyPressed = 1;
+		this.keyPressed = 1;
 		if(this.defense < 3){
 		this.defense = this.defense+3;
 		}
@@ -266,6 +266,7 @@ var mainF = {
 		this.pauseKey = game.input.keyboard.addKey(Phaser.Keyboard.A);
 		this.bool = 1;
 		this.bool2 = 1;
+		this.keyPressed = 0;
     },
 
     update: function() {
@@ -283,13 +284,13 @@ var mainF = {
 	}
 	if(this.pauseKey.isDown){
 		if(this.bool2 == 1){
-			if(this.playerHP + 70 >= 100){
+			if(this.playerHP + 60 >= 100){
 				this.playerHP = 100;
 				this.labelScore1.text = this.playerHP;
 				this.bool2 = 0;
 			}
 			else{
-				this.playerHP += 70;
+				this.playerHP += 60;
 				this.labelScore1.text = this.playerHP;
 				this.bool2 = 0;
 			}
@@ -298,32 +299,38 @@ var mainF = {
 	if(this.bool == 1){
 		if(this.enemyHP <= 20){
 			this.bool = 0;
-			this.enemyHP = this.enemyHP + 45;
+			this.enemyHP = this.enemyHP + 50;
 			this.labelScore.text = this.enemyHP;
 		}
 	}
-	if(this.input.up.isDown){
-		this.enemyHP = this.enemyHP - ((Math.floor((Math.random(2)+4)))+this.defense);
+	if(this.input.up.isDown && this.keyPressed == 0){
+		this.keyPressed = 1;
+		this.enemyHP = this.enemyHP - ((Math.floor((Math.random(2)+7)))+this.defense);
 		this.labelScore.text = this.enemyHP;
-		this.playerHP = this.playerHP - (Math.floor(Math.random(2)+5));
+		this.playerHP = this.playerHP - (Math.floor(Math.random(2)+9));
 		this.labelScore1.text = this.playerHP;
 	}
-	if(this.input.down.isDown){
+	if(this.input.down.isDown && this.keyPressed == 0){
+		this.keyPressed = 1;
 		this.enemyHP = this.enemyHP - ((Math.floor(Math.random(4)+3))+this.defense);
 		var x1 = this.enemyHP;
 		this.labelScore.text = this.enemyHP;
-		this.playerHP = this.playerHP - (Math.floor(Math.random(2)+5));
+		this.playerHP = this.playerHP - (Math.floor(Math.random(2)+7));
 		var x2 = this.playerHP;
 		this.labelScore1.text = this.playerHP;
 	}
 
-	if(this.input.left.isDown){
+	if(this.input.left.isDown && this.keyPressed == 0){
+		this.keyPressed = 1;
 		if(this.defense < 3){
 		this.defense = this.defense+3;
 		}
-		this.playerHP = this.playerHP - (Math.floor(Math.random(2)+4));
+		this.playerHP = this.playerHP - (Math.floor(Math.random(2)+5));
 		this.labelScore1.text = this.playerHP;
 	}
+	if((this.input.left.isUp && this.input.right.isUp && this.input.down.isUp && this.input.up.isUp)){
+		this.keyPressed = 0;
+	}	
     },
 };
 
