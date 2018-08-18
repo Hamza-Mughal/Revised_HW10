@@ -222,7 +222,9 @@ var mainD = {
 		this.playerHP = this.playerHP - 4;
 		this.labelScore1.text = this.playerHP;
 	}
-	if(this.input.left.isUp || this.input.right.isUp || this.input.down.isUp || this.input.up.isUp){
+	if((this.input.left.isUp || this.input.right.isUp || this.input.down.isUp || this.input.up.isUp)
+		&& ((this.input.left.isDown == false || this.input.right.isDown == false this.input.up.isDown == false
+		this.input.down.isDown == false){
 		this.keyPressed = 0;
 	}
     },
