@@ -195,12 +195,14 @@ var mainD = {
 		}
 		
 	if(this.input.up.isDown && this.keyPressed == 0){
+		this.keyPressed = 1;
 		this.enemyHP = this.enemyHP - (4+this.defense);
 		this.labelScore.text = this.enemyHP;
 		this.playerHP = this.playerHP - 3;
 		this.labelScore1.text = this.playerHP;
 	}
 	if(this.input.down.isDown && this.keyPressed == 0){
+				this.keyPressed = 1;
 		this.enemyHP = this.enemyHP - (3+this.defense);
 		var x1 = this.enemyHP;
 		this.labelScore.text = this.enemyHP;
@@ -213,6 +215,7 @@ var mainD = {
 		game.state.start('bmain');
 	}
 	if(this.input.left.isDown && this.keyPressed == 0){
+				this.keyPressed = 1;
 		if(this.defense < 3){
 		this.defense = this.defense+3;
 		}
