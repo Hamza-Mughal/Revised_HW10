@@ -181,6 +181,7 @@ var mainD = {
 		this.labelScore1 = game.add.text(580, 490, "100", { font: "30px Arial", fill: "#000000" });
 		this.labelScore = game.add.text(185, 45, "100", { font: "30px Arial", fill: "#000000" });
 		this.input = game.input.keyboard.createCursorKeys();
+		this.keyPressed = 0;
     },
 
     update: function() {
@@ -192,13 +193,14 @@ var mainD = {
 			this.song.pause();
 			game.state.start('bmain');
 		}
-	if(this.input.up.isDown){
+		
+	if(this.input.up.isDown && this.keyPressed == 0){
 		this.enemyHP = this.enemyHP - (4+this.defense);
 		this.labelScore.text = this.enemyHP;
 		this.playerHP = this.playerHP - 3;
 		this.labelScore1.text = this.playerHP;
 	}
-	if(this.input.down.isDown){
+	if(this.input.down.isDown && this.keyPressed == 0){
 		this.enemyHP = this.enemyHP - (3+this.defense);
 		var x1 = this.enemyHP;
 		this.labelScore.text = this.enemyHP;
@@ -206,16 +208,19 @@ var mainD = {
 		var x2 = this.playerHP;
 		this.labelScore1.text = this.playerHP;
 	}
-	if(this.input.right.isDown){
+	if(this.input.right.isDown && this.keyPressed == 0){
 		this.song.pause();
 		game.state.start('bmain');
 	}
-	if(this.input.left.isDown){
+	if(this.input.left.isDown && this.keyPressed == 0){
 		if(this.defense < 3){
 		this.defense = this.defense+3;
 		}
 		this.playerHP = this.playerHP - 4;
 		this.labelScore1.text = this.playerHP;
+	}
+	if(this.input.left.isUp || this.input.right.isUp || this.input.down.isUp || this.input.up.isUp){
+		this.keyPressed = 0;
 	}
     },
 };
