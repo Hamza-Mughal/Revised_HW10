@@ -315,7 +315,7 @@ var mainF = {
 	}
 	if(this.input.up.isDown && this.keyPressed == 0){
 		this.keyPressed = 1;
-		this.enemyHP = this.enemyHP - ((Math.floor((Math.random(3)+6)))+this.defense);
+		this.enemyHP = this.enemyHP - ((Math.floor((Math.random(3)+5)))+this.defense);
 		if(this.enemyHP < 0){
 			this.labelScore.text = 0;
 		}
