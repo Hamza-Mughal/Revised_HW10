@@ -422,7 +422,7 @@ var mainH = {
 	}
 	if(this.input.right.isDown){
 		this.song.pause();
-		game.state.start('main');
+		game.state.start('mainJapan');
 	}
 	if(this.pauseKey.isDown){
 		if(this.bool2 == 1){
