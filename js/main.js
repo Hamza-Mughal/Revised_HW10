@@ -294,22 +294,22 @@ var mainF = {
 	}
 	if(this.pauseKey.isDown){
 		if(this.bool2 == 1){
-			if(this.playerHP + 60 >= 100){
+			if(this.playerHP + 65 >= 100){
 				this.playerHP = 100;
 				this.labelScore1.text = this.playerHP;
 				this.bool2 = 0;
 			}
 			else{
-				this.playerHP += 60;
+				this.playerHP += 65;
 				this.labelScore1.text = this.playerHP;
 				this.bool2 = 0;
 			}
 		}
 	}
 	if(this.bool == 1){
-		if(this.enemyHP <= 25){
+		if(this.enemyHP <= 10){
 			this.bool = 0;
-			this.enemyHP = this.enemyHP + 50;
+			this.enemyHP = this.enemyHP + 65;
 			this.labelScore.text = this.enemyHP;
 		}
 	}
@@ -322,7 +322,7 @@ var mainF = {
 		else {
 			this.labelScore.text = this.enemyHP;
 		}
-		this.playerHP = this.playerHP - (Math.floor(Math.random(5)+6));
+		this.playerHP = this.playerHP - (Math.floor(Math.random(5)+7));
 		this.labelScore1.text = this.playerHP;
 	}
 	if(this.input.down.isDown && this.keyPressed == 0){
@@ -335,7 +335,7 @@ var mainF = {
 		else {
 			this.labelScore.text = this.enemyHP;
 		}
-		this.playerHP = this.playerHP - (Math.floor(Math.random(4)+4));
+		this.playerHP = this.playerHP - (Math.floor(Math.random(4)+5));
 		var x2 = this.playerHP;
 		this.labelScore1.text = this.playerHP;
 	}
@@ -343,9 +343,9 @@ var mainF = {
 	if(this.input.left.isDown && this.keyPressed == 0){
 		this.keyPressed = 1;
 		if(this.defense < 3){
-		this.defense = this.defense+3;
+		this.defense = this.defense+2;
 		}
-		this.playerHP = this.playerHP - (Math.floor(Math.random(6)+3));
+		this.playerHP = this.playerHP - (Math.floor(Math.random(6)+4));
 		this.labelScore1.text = this.playerHP;
 	}
 	if((this.input.left.isUp && this.input.right.isUp && this.input.down.isUp && this.input.up.isUp)){
