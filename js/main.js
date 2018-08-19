@@ -190,6 +190,7 @@ var mainD = {
 			this.song.pause();
 			game.state.start('emain');
 		}
+		
 		if(this.playerHP <= 0){
 			this.song.pause();
 			game.state.start('bmain');
@@ -316,7 +317,8 @@ var mainF = {
 	}
 	if(this.input.up.isDown && this.keyPressed == 0){
 		this.keyPressed = 1;
-		this.enemyHP = this.enemyHP - ((Math.floor((Math.random(3)+5)))+this.defense);
+		this.enemyHP = this.enemyHP - ((this.game.rnd.intergerInRange(0, 5))+this.defense);
+		Phaser.MATH
 		if(this.enemyHP < 0){
 			this.labelScore.text = 0;
 		}
