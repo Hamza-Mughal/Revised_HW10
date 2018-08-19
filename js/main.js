@@ -7,6 +7,7 @@ var mainState = {
 
     },
 
+	
     create: function() {
 	// game.stage.backgroundColor = '#94fcc0';
     this.background = game.add.tileSprite(0,0,800,600,'background');
