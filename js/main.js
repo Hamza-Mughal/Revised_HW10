@@ -318,7 +318,6 @@ var mainF = {
 	if(this.input.up.isDown && this.keyPressed == 0){
 		this.keyPressed = 1;
 		this.enemyHP = this.enemyHP - ((this.game.rnd.intergerInRange(0, 5))+this.defense);
-		Phaser.MATH
 		if(this.enemyHP < 0){
 			this.labelScore.text = 0;
 		}
